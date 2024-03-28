@@ -21,7 +21,7 @@ motor_group wing=motor_group(wingleft,wingright);
 bool tank=false;
 double leftvalue;
 double rightvalue;
-bool up=false;
+bool up=true;
 bool wingmoving=false;
 
 void pre_auton(void) {
@@ -178,9 +178,15 @@ void usercontrol(void) {
     if (Controller.ButtonUp.pressing()) {
       if (!up && !wingmoving){
         wingmoving=true;
-        wing.setVelocity(70, percent);
-        wing.spinFor(reverse,0.315,sec);
-        wing.setStopping(hold);
+        wingleft.setVelocity(70, percent);
+        wingright.setVelocity(70, percent);
+        wingleft.setStopping(coast);
+        wingright.setStopping(coast);
+        wingleft.spin(forward);
+        wingright.spin(forward);
+        wait(0.3,sec);
+        wingleft.stop();
+        wingright.stop();
         up=true;
         wingmoving=false;
       }
@@ -189,9 +195,16 @@ void usercontrol(void) {
     if (Controller.ButtonDown.pressing()) {
       if (up && !wingmoving){
         wingmoving=true;
-        wing.setVelocity(70, percent);
-        wing.setStopping(hold);
-        wing.spinFor(forward,0.315,sec);
+        wingleft.setVelocity(70, percent);
+        wingright.setVelocity(70, percent);
+        wingleft.setStopping(coast);
+        wingright.setStopping(coast);
+        wingleft.spin(reverse);
+        wingright.spin(reverse);
+        wait(0.2,sec);
+        wingleft.stop();
+        wait(0.1,sec);
+        wingright.stop();
         up=false;
         wingmoving=false;
       }
