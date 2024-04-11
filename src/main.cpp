@@ -3,14 +3,14 @@
 using namespace vex;
 
 competition Competition;
-motor bottomleft = motor(PORT10, ratio18_1, true);
-motor bottomright = motor(PORT7, ratio18_1, false);
-motor topleft = motor(PORT12, ratio18_1, true);
-motor topright = motor(PORT11, ratio18_1, false);
-motor intake = motor(PORT13, ratio18_1, false);
-motor wingright = motor(PORT14, ratio6_1, false);
-motor wingleft = motor(PORT15, ratio6_1, true);
-motor fly = motor(PORT18, ratio6_1, true);
+motor bottomleft = motor(PORT9, ratio18_1, true);
+motor bottomright = motor(PORT2, ratio18_1, false);
+motor topleft = motor(PORT8, ratio18_1, true);
+motor topright = motor(PORT3, ratio18_1, false);
+motor intake = motor(PORT20, ratio18_1, false);
+motor wingright = motor(PORT1, ratio6_1, false);
+motor wingleft = motor(PORT10, ratio6_1, true);
+motor fly = motor(PORT19, ratio6_1, true);
 
 controller Controller=controller(primary);
 
