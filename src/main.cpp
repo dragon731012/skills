@@ -208,6 +208,8 @@ void usercontrol(void) {
         wingleft.stop();
         wait(0.1,sec);
         wingright.stop();
+        wingleft.setStopping(hold);
+        wingright.setStopping(hold);
         up=false;
         wingmoving=false;
       }
