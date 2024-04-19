@@ -11,6 +11,7 @@ motor intake = motor(PORT20, ratio18_1, false);
 motor wingright = motor(PORT1, ratio6_1, false);
 motor wingleft = motor(PORT10, ratio6_1, true);
 motor fly = motor(PORT19, ratio6_1, true);
+motor fly2 = motor(PORT4, ratio6_1, false);
 
 controller Controller=controller(primary);
 
@@ -213,11 +214,16 @@ void usercontrol(void) {
     if (Controller.ButtonL2.pressing()) {
       fly.setVelocity(100.0, percent);
       fly.spin(forward);
+      fly2.setVelocity(100.0, percent);
+      fly2.spin(forward);
     } else if (Controller.ButtonL1.pressing()) {
       fly.setVelocity(100.0, percent);
       fly.spin(reverse);
+      fly2.setVelocity(100.0, percent);
+      fly2.spin(reverse);
     } else {
       fly.stop();
+      fly2.stop();
     }
 
     Controller.ButtonLeft.pressed(switchtype);
