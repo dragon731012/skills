@@ -126,6 +126,8 @@ void autonomous(void) {
   up=true;
   wingmoving=false;
   fly.setVelocity(100,percent);
+  fly2.setVelocity(100,percent);
+  fly2.spin(reverse);
   fly.spin(reverse);
   leftmotors.setVelocity(5,percent);
   rightmotors.setVelocity(5,percent);
