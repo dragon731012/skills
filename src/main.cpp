@@ -97,6 +97,7 @@ void autonomous(void) {
   leftmotors.setVelocity(75, percent);
   rightmotors.setVelocity(75, percent);
   intake.setVelocity(100,percent);
+  fly2.setVelocity(100,percent);
   
   intake.setVelocity(20,percent);
   intake.spin(forward);
