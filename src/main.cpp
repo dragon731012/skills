@@ -205,10 +205,10 @@ void usercontrol(void) {
         wingright.setStopping(coast);
         wingleft.spin(reverse);
         wingright.spin(reverse);
-        wait(0.2,sec);
+        wait(0.3,sec);
         wingleft.stop();
-        wait(0.1,sec);
         wingright.stop();
+        wait(0.4,sec);
         wingleft.setStopping(hold);
         wingright.setStopping(hold);
         up=false;
